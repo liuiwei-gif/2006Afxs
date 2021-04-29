@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>my-lw</title>
+</head>
+
+<body>
+    1111111
+</body>
+<script>
+    function confirm(flag) {
+        return new Promise((resolve, reject) =>{
+            if (flag == 1) {
+                return resolve({
+                    code: 200,
+                    msg: "请求成功"
+                })
+            } else if (flag == 2) {
+                return reject({
+                    code: 500,
+                    msg: "热死我了"
+                })
+            }
+        })
+    }
+
+    confirm(1).then(res => {
+        console.log(res)
+    }).catch(err => {
+        console.log(err)
+    })
+    confirm(2).then(res => {
+        console.log(res)
+    }).catch(err => {
+        console.log(err)
+    })
+</script>
+
+</html>
